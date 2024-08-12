@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>料理と材料の集計</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>1週間分の料理を選択してください</h1>
+    <div id="mealPlan">
+        <div class="day">
+            <label>月曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        <div class="day">
+            <label>火曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        <div class="day">
+            <label>水曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        <div class="day">
+            <label>木曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        <div class="day">
+            <label>金曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        <div class="day">
+            <label>土曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        <div class="day">
+            <label>日曜日</label>
+            <label>昼</label>
+            <select class="recipeSelect">
+            </select>
+            <label>夜</label>
+            <select class="recipeSelect">
+            </select>
+        </div>
+        
+    </div>
+
+    <button id="calculateIngredients">材料の総数を計算</button>
+    <button id="clearSelections">選択をクリア</button>
+    
+    <h2>必要な材料の総数</h2>
+    <div id="totalIngredients">
+        <!-- 総計がここに表示されます -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
