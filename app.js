@@ -13,6 +13,8 @@ $(document).ready(function() {
         <option value="親子丼">親子丼</option>
         <option value="豚肉の生姜焼き">豚肉の生姜焼き</option>
         <option value="甘辛ネギ玉豚丼">甘辛ネギ玉豚丼</option>
+        <option value="鶏肉とネギのオイスター炒め">鶏肉とネギのオイスター炒め</option>
+        <option value="ゴーヤチャンプル">ゴーヤチャンプル</option>
     `;
 
     // 各<select>タグにオプションを追加
@@ -77,6 +79,18 @@ $(document).ready(function() {
             { name: '玉ねぎ', quantity: 0.25, unit: '個' },
             { name: '卵', quantity: 2, unit: '個' },
             { name: 'ネギ', quantity: 2, unit: '本' },
+        ],
+        鶏肉とネギのオイスター炒め: [
+            { name: '鶏肉', quantity: 140, unit: 'g' },
+            { name: 'しいたけ', quantity: 2, unit: '本' },
+            { name: '卵', quantity: 2, unit: '個' },
+            { name: 'ネギ', quantity: 2, unit: '本' },
+        ],
+        ゴーヤチャンプル: [
+            { name: '豚バラ', quantity: 160, unit: 'g' },
+            { name: '木綿豆腐', quantity: 0.5, unit: '丁' },
+            { name: '卵', quantity: 1, unit: '個' },
+            { name: 'ゴーヤ', quantity: 1, unit: '本' },
         ],
     };
 
