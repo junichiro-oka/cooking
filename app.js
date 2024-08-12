@@ -59,6 +59,7 @@ $(document).ready(function() {
             { name: '小松菜', quantity: 1, unit: '株' },
             { name: 'キムチ', quantity: 200, unit: 'g' },
             { name: '卵', quantity: 2, unit: '個' },
+            { name: 'もやし', quantity: 0.5, unit: '袋' },
         ],
         きのこのガーリックライス: [
             { name: '豚バラ', quantity: 160, unit: 'g' },
