@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#mealPlan .day {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#mealPlan .day label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#mealPlan .day select {
+    flex: 2;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#clearSelections {
+    background-color: #dc3545;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+#totalIngredients p {
+    margin: 5px 0;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    #mealPlan .day {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #mealPlan .day label, 
+    #mealPlan .day select {
+        width: 100%;
+    }
+
+    #mealPlan .day select {
+        margin-top: 5px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+}
