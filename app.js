@@ -15,6 +15,9 @@ $(document).ready(function() {
         <option value="甘辛ネギ玉豚丼">甘辛ネギ玉豚丼</option>
         <option value="鶏肉とネギのオイスター炒め">鶏肉とネギのオイスター炒め</option>
         <option value="ゴーヤチャンプル">ゴーヤチャンプル</option>
+        <option value="豚バラ醤油ラーメン">豚バラ醤油ラーメン</option>
+        <option value="プルコギ丼">プルコギ丼</option>
+        <option value="鶏塩丼">鶏塩丼</option>
     `;
 
     // 各<select>タグにオプションを追加
@@ -92,6 +95,25 @@ $(document).ready(function() {
             { name: '木綿豆腐', quantity: 0.5, unit: '丁' },
             { name: '卵', quantity: 1, unit: '個' },
             { name: 'ゴーヤ', quantity: 1, unit: '本' },
+        ],
+        豚バラ醤油ラーメン: [
+            { name: '豚バラ', quantity: 160, unit: 'g' },
+            { name: 'もやし', quantity: 200, unit: 'g' },
+            { name: '中華麺', quantity: 2, unit: '玉' },
+            { name: '小口切りの小ネギ', quantity: 1, unit: '適量' },
+        ],
+        プルコギ丼: [
+            { name: '牛肉', quantity: 160, unit: 'g' },
+            { name: 'ニンジン', quantity: 0.5, unit: '本' },
+            { name: 'もやし', quantity: 100, unit: 'g' },
+            { name: '玉ねぎ', quantity: 0.5, unit: '個' },
+            { name: 'ピーマン', quantity: 2, unit: '個' },
+            { name: '卵', quantity: 2, unit: '個' },
+        ],
+        鶏塩丼: [
+            { name: '鶏肉', quantity: 160, unit: 'g' },
+            { name: '玉ねぎ', quantity: 1, unit: '個' },
+            { name: '茄子', quantity: 1, unit: '本' },
         ],
     };
 
