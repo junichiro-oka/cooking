@@ -19,6 +19,7 @@ $(document).ready(function() {
         <option value="プルコギ丼">プルコギ丼</option>
         <option value="鶏塩丼">鶏塩丼</option>
         <option value="小松菜のチャプチェ風炒め">小松菜のチャプチェ風炒め</option>
+        <option value="塩焼きそば">塩焼きそば</option>
     `;
 
     // 各<select>タグにオプションを追加
@@ -87,13 +88,13 @@ $(document).ready(function() {
             { name: '豚バラ', quantity: 160, unit: 'g' },
             { name: '玉ねぎ', quantity: 0.25, unit: '個' },
             { name: '卵', quantity: 2, unit: '個' },
-            { name: 'ネギ', quantity: 2, unit: '本' },
+            { name: '長ネギ', quantity: 2, unit: '本' },
         ],
         鶏ネギオイスター: [
             { name: '鶏肉', quantity: 140, unit: 'g' },
             { name: 'しいたけ', quantity: 2, unit: '本' },
             { name: '卵', quantity: 2, unit: '個' },
-            { name: 'ネギ', quantity: 2, unit: '本' },
+            { name: '長ネギ', quantity: 2, unit: '本' },
         ],
         ゴーヤチャンプル: [
             { name: '豚バラ', quantity: 160, unit: 'g' },
@@ -126,6 +127,13 @@ $(document).ready(function() {
             { name: 'パプリカ', quantity: 0.5, unit: '個' },
             { name: '春雨', quantity: 50, unit: 'g' },
         ],
+        塩焼きそば: [
+            { name: '中華麺', quantity: 2, unit: '袋' },
+            { name: '豚バラ', quantity: 160, unit: 'g' },
+            { name: 'もやし', quantity: 200, unit: 'g' },
+            { name: '長ネギ', quantity: 1, unit: '本' },
+        ],
+
     };
 
     // 材料の総数を計算するボタンのクリックイベント
