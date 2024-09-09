@@ -1,40 +1,42 @@
+/* 全体のフォントサイズを少し小さくする */
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
     background-color: #f8f8f8;
+    font-size: 0.9rem; /* フォントサイズを小さくする */
 }
 
-h1 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* 曜日ごとのレイアウト */
 #mealPlan .day {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* マージンを減らす */
 }
 
+/* ラベルのスタイルをコンパクトに */
 #mealPlan .day label {
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: 5px; /* マージンを減らす */
+    font-size: 0.85rem; /* ラベルのフォントサイズを少し小さく */
 }
 
+/* セレクトボックスのサイズ調整 */
 #mealPlan .day select {
-    flex: 2;
-    padding: 5px;
-    font-size: 1rem;
+    flex: 1;
+    padding: 3px; /* パディングを少し減らす */
+    font-size: 0.85rem; /* フォントサイズを少し小さく */
+    margin-left: 5px; /* 左側のマージンを調整 */
 }
 
+/* ボタンのスタイルを縮小 */
 button {
     display: block;
     width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    margin-top: 10px;
+    padding: 8px; /* パディングを少し減らす */
+    font-size: 0.85rem; /* フォントサイズを少し小さく */
+    margin-top: 8px; /* マージンを少し減らす */
     background-color: #007bff;
     color: white;
     border: none;
@@ -46,48 +48,44 @@ button#clearSelections {
     background-color: #dc3545;
 }
 
-button:hover {
-    opacity: 0.9;
+/* 2つのボタンを横並びに */
+#calculateIngredients, #clearSelections {
+    width: 48%; /* 各ボタンの幅を調整して2つを横並びにする */
+    display: inline-block;
+    margin-right: 2%; /* 間に少しスペースを入れる */
 }
 
+/* 最後のボタンはマージンを0に */
+button#clearSelections {
+    margin-right: 0;
+}
+
+/* 総計エリアのフォントサイズも小さく */
 h2 {
-    font-size: 1.25rem;
-    margin-top: 20px;
+    font-size: 1rem;
+    margin-top: 15px;
 }
 
 #totalIngredients p {
     margin: 5px 0;
+    font-size: 0.85rem; /* フォントサイズを少し小さく */
 }
 
 /* スマートフォン対応 */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.25rem;
-    }
-
     #mealPlan .day {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 8px; /* 少しスペースを減らす */
     }
 
     #mealPlan .day label, 
     #mealPlan .day select {
-        width: 100%;
-    }
-
-    #mealPlan .day select {
-        margin-top: 5px;
+        width: 30px;
+        font-size: 0.5rem; /* スマホではさらに少し小さく */
     }
 
     button {
-        font-size: 0.9rem;
-    }
-
-    h2 {
-        font-size: 1rem;
+        font-size: 0.8rem; /* ボタンのフォントサイズもさらに小さく */
     }
 }
