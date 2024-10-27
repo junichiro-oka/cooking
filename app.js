@@ -15,11 +15,17 @@ $(document).ready(function() {
         <option value="甘辛ネギ玉豚丼">甘辛ネギ玉豚丼</option>
         <option value="鶏ネギオイスター">鶏ネギオイスター</option>
         <option value="ゴーヤチャンプル">ゴーヤチャンプル</option>
-        <option value="豚バラ醤油ラーメン">豚バラ醤油ラーメン</option>
+        <option value="醤油ラーメン">豚バラ醤油ラーメン</option>
         <option value="プルコギ丼">プルコギ丼</option>
         <option value="鶏塩丼">鶏塩丼</option>
         <option value="小松菜のチャプチェ風炒め">小松菜のチャプチェ風炒め</option>
         <option value="塩焼きそば">塩焼きそば</option>
+        <option value="だし焼きうどん">だし焼きうどん</option>
+        <option value="小松菜もやしガーリック">小松菜もやしガーリック</option>
+        <option value="トマト豚バラキムチ">トマト豚バラキムチ</option>
+
+
+
     `;
 
     // 各<select>タグにオプションを追加
@@ -40,7 +46,7 @@ $(document).ready(function() {
         ],
         パスタ:[
             { name: 'ベーコン角切りタイプ', quantity: 80, unit: 'g' },
-            { name: 'しめじ', quantity: 100, unit: 'g' },
+            { name: 'しめじ', quantity: 1, unit: 'パック' },
         ],
         ピリ辛豚丼: [
             { name: '豚ひき肉', quantity: 160, unit: 'g' },
@@ -51,7 +57,7 @@ $(document).ready(function() {
         豚バラ塩だれ丼: [
             { name: '豚バラ', quantity: 160, unit: 'g' },
             { name: '玉ねぎ', quantity: 1, unit: '個' },
-            { name: 'しめじ', quantity: 100, unit: 'g' },
+            { name: 'しめじ', quantity: 1, unit: 'パック' },
         ],
         豚肉キャベツめんつゆ甘辛丼: [
             { name: '豚バラ', quantity: 160, unit: 'g' },
@@ -65,7 +71,7 @@ $(document).ready(function() {
         ビビンバ: [
             { name: '豚ひき肉', quantity: 160, unit: 'g' },
             { name: 'ニンジン', quantity: 0.5, unit: '本' },
-            { name: '小松菜', quantity: 1, unit: '株' },
+            { name: '小松菜', quantity: 0.25, unit: '袋' },
             { name: 'キムチ', quantity: 200, unit: 'g' },
             { name: '卵', quantity: 2, unit: '個' },
             { name: 'もやし', quantity: 0.5, unit: '袋' },
@@ -102,8 +108,8 @@ $(document).ready(function() {
             { name: '卵', quantity: 1, unit: '個' },
             { name: 'ゴーヤ', quantity: 1, unit: '本' },
         ],
-        豚バラ醤油ラーメン: [
-            { name: '豚バラ', quantity: 160, unit: 'g' },
+        醤油ラーメン: [
+            { name: 'チャーシュー、煮卵', quantity: 2, unit: '個' },
             { name: 'もやし', quantity: 200, unit: 'g' },
             { name: '中華麺', quantity: 2, unit: '玉' },
             { name: '小口切りの小ネギ', quantity: 1, unit: '適量' },
@@ -123,7 +129,7 @@ $(document).ready(function() {
         ],
         小松菜のチャプチェ風炒め: [
             { name: '豚バラ', quantity: 160, unit: 'g' },
-            { name: '小松菜', quantity: 150, unit: 'g' },
+            { name: '小松菜', quantity: 0.5, unit: '袋' },
             { name: 'パプリカ', quantity: 0.5, unit: '個' },
             { name: '春雨', quantity: 50, unit: 'g' },
         ],
@@ -133,7 +139,26 @@ $(document).ready(function() {
             { name: 'もやし', quantity: 200, unit: 'g' },
             { name: '長ネギ', quantity: 1, unit: '本' },
         ],
-
+        だし焼きうどん: [
+            { name: 'うどん', quantity: 2, unit: '玉' },
+            { name: '豚バラ', quantity: 160, unit: 'g' },
+            { name: 'キャベツ', quantity: 0.25, unit: '玉' },
+            { name: 'しめじ', quantity: 1, unit: 'パック' },
+            { name: 'ニンジン', quantity: 0.5, unit: '本' },
+        ],
+        小松菜もやしガーリック: [
+            { name: '小松菜', quantity: 1, unit: '袋' },
+            { name: '豚バラ', quantity: 160, unit: 'g' },
+            { name: 'もやし', quantity: 200, unit: 'g' },
+            { name: 'しめじ', quantity: 1, unit: 'パック' },
+            { name: 'ニンジン', quantity: 0.5, unit: '本' },
+        ],
+        トマト豚バラキムチ: [
+            { name: 'トマト', quantity: 1, unit: '個' },
+            { name: '豚バラ', quantity: 160, unit: 'g' },
+            { name: 'ニラ', quantity: 0.5, unit: '束' },
+            { name: 'キムチ', quantity: 60, unit: 'g' },
+        ],
     };
 
     // 材料の総数を計算するボタンのクリックイベント
@@ -142,13 +167,13 @@ $(document).ready(function() {
 
         $('.recipeSelect').each(function() {
             const selectedRecipe = $(this).val();
-
+    
             if (selectedRecipe && ingredientsData[selectedRecipe]) {
                 ingredientsData[selectedRecipe].forEach(function(ingredient) {
                     const name = ingredient.name;
                     const quantity = ingredient.quantity;
                     const unit = ingredient.unit;
-
+    
                     if (totalIngredients[name]) {
                         totalIngredients[name].quantity += quantity;
                     } else {
@@ -157,7 +182,21 @@ $(document).ready(function() {
                 });
             }
         });
-
+    
+        // 卵の合計を追加
+        if (totalIngredients['卵']) {
+            totalIngredients['卵'].quantity += 5;
+        } else {
+            totalIngredients['卵'] = { quantity: 5, unit: '個' };
+        }
+    
+        // ヨーグルトの合計を追加
+        if (totalIngredients['ヨーグルト']) {
+            totalIngredients['ヨーグルト'].quantity += 1;
+        } else {
+            totalIngredients['ヨーグルト'] = { quantity: 1, unit: '週間分' };
+        }
+    
         displayTotalIngredients(totalIngredients);
         saveSelections();  // 選択内容を保存
     });

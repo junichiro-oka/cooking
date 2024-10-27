@@ -71,6 +71,11 @@ h2 {
     font-size: 0.85rem; /* フォントサイズを少し小さく */
 }
 
+textarea {
+    width: 100%;
+    height: 500px;
+}
+
 /* スマートフォン対応 */
 @media (max-width: 600px) {
     #mealPlan .day {
